@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+        function print () {
+            var name = document.getElementById("name").value;
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var gender = document.getElementById("gender").value;
+            var email = document.getElementById("email").value;
+            var address = document.getElementById("address").value;
+            var interests = document.getElementById("interests").value;
+
+            document.getElementById("name").innerText="Name: " + name;
+            document.getElementById("username").innerText="Username: " + username;
+            document.getElementById("password").innerText="Password: " + password;
+            document.getElementById("gender").innerText="Gender: " + gender;
+            document.getElementById("email").innerText="Email: " + email;
+            document.getElementById("address").innerText="Address: " + address;
+            document.getElementById("interests").innerText="Interests: " + interests;
+        }
+
+        function blur () {
+            var x = document.getElementById("input").value;
+
+            if (x === "") {
+                classList.add('error');
+                classList.remove('success');
+            }
+            else if (x !== "") {
+                classList.add('success');
+                classList.remove('error');
+            } else {
+                classList.remove('error');
+            }
+        }
+    </script>
+    <fieldset class="field" onsubmit="print()">
+        <legend class="title">Sign-Up Credentials</legend>
+        <label for="name" class="display">Name </label><br>
+        <input type="text" id="name" name="name" class="input" onblur="blur()"></input><br><br>
+        <label for="username" class="display">Username </label><br>
+        <input type="text" id="username" name="username" class="input" onblur="blur()"></input><br><br>
+        <label for="password" class="display">Password <small>(Use a combination of letters and numbers)</small></label><br>
+        <input type="password" id="password" name="password" class="input" onblur="blur()"></input><br><br>
+        <label for="gender">Gender</label></br>
+        <select name="gender" id="gender" class="input">
+            <option value="nomention">Prefer not to mention</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select><br><br>
+        <label for="email" class="display">Email </label><br>
+        <input type="email" id="email" name="email" class="input" onblur="blur()"></input><br><br>
+        <label for="address" class="display">Address </label><br>
+        <input type="text" id="address" name="address" class="input" onblur="blur()"></input><br><br>
+        <label for="interests" class="display">Interests </label><br>
+        <textarea type="text" id="interests" name="interests" class="input2" onblur="blur()"></textarea><br><br>
+        <input type="submit" value="Submit" class="submit">
+        <input type="reset" value="Reset" class="reset">
+    </fieldset>
+    <div>
+        <p id="name"></p>
+        <p id="username"></p>
+        <p id="password"></p>
+        <p id="gender"></p>
+        <p id="email"></p>
+        <p id="address"></p>
+        <p id="interests"></p>
+    </div>
+</body>
+</html>
